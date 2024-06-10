@@ -1,7 +1,24 @@
 import * as a from './actionTypes';
+import booksReducer from "./reducer";
 export const addBook = (newBook) => {
     return {
-        type: 'ADD_BOOK',
+        type: a.ADD_BOOK,
         payload: newBook
     }
+}
+
+export const removeBook = (id) => {
+    return {
+        type: a.REMOVE_BOOK,
+        payload: id
+    }
+}
+
+export const toggleFavorite = (id) => {
+    return{
+        type: a.TOGGLE_FAVORITE,
+        payload: id
+
+    }
+
 }
