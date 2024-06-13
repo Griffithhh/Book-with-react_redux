@@ -1,16 +1,16 @@
 import {useDispatch, useSelector} from "react-redux";
 import {BsBookmarkStarFill, BsBookmarkStar} from "react-icons/bs";
-import './BookList.css'
-import {removeBook, toggleFavorite} from "../../redux/books/actionCreators";
+import '../BookList/BookList.css'
+import {removeBook, toggleFavorite, selectBook} from '../../redux/slices/booksSlice'
 import {
     selectTitleFilter,
     setOnlyFavoriteFilter,
     selectAuthorFilter,
     selectOnlyFavoriteFilter
-} from "../../redux/slices/filterSlice";
+} from '../../redux/slices/filterSlice'
 
 const BookList = () => {
-    const books = useSelector((state) => state.books);
+    const books     = useSelector(selectBook);
     const titleFilter = useSelector(selectTitleFilter)
     const authorFilter = useSelector(selectAuthorFilter)
     const dispatch = useDispatch()
